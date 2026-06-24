@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Degree Elevation</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <canvas id="canvas"></canvas>
+
+  <!-- HUD: bottom-left -->
+  <div class="hud hud-left">
+    <div class="row">
+      <div class="label">Points: <span id="pointsValue">6</span></div>
+    </div>
+    <input id="pointsSlider" type="range" min="3" max="12" value="6" step="1" />
+
+    <div class="divider"></div>
+
+    <div class="row">
+      <div class="label">Samples: <span id="samplesValue">80</span></div>
+    </div>
+    <input id="samplesSlider" type="range" min="5" max="200" value="80" step="1" />
+
+  </div>
+
+  <!-- HUD: bottom-right -->
+  <div class="hud hud-right">
+    <div class="row row-wrap">
+      <button id="toggleGridBtn" class="btn">Hide Grid</button>
+      <button id="toggleConstructionBtn" class="btn">Show Construction</button>
+      <button id="toggleElevatedBtn" class="btn on">Hide Elevated</button>
+      <button id="toggleIntermediateBtn" class="btn">Show Intermediates</button>
+      <button id="resetBtn" class="btn">Reset</button>
+    </div>
+
+    <div class="row">
+      <div class="label">t (Casteljau) = <span id="tValue">0.50</span></div>
+    </div>
+    <input id="tSlider" type="range" min="0" max="1" value="0.5" step="0.01" />
+
+    <div class="divider"></div>
+
+    <div class="row row-wrap">
+      <div class="label">k =</div>
+      <input id="kInput" class="num" type="number" min="0" max="12" value="1" />
+      <span class="smallHint">MAX: 12</span>
+      <button id="elevateOnceBtn" class="btn secondary">Elevate +1</button>
+      <button id="resetKBtn" class="btn secondary">Reset k</button>
+    </div>
+
+   <div class="divider"></div>
+
+<div id="degreeInfo" class="legend">
+  Degree: n = ?, elevated = n + k = ?
+</div>
+
+<div class="legend">
+  <div><span class="swatch magenta"></span> Original Bezier (solid)</div>
+  <div><span class="swatch blue"></span> Elevated Bezier (dashed)</div>
+  <div><span class="swatch construction"></span> Casteljau construction</div>
+  <div><span class="swatch elevatedpoly"></span> Final elevated control polygon</div>
+  <div><span class="swatch intermediates"></span> Intermediate elevation polygons</div>
+
+  <div><span class="dot green"></span> Start control point (draggable)</div>
+  <div><span class="dot red"></span> End control point (draggable)</div>
+  <div><span class="dot yellow"></span> Intermediate control points (draggable)</div>
+  <div><span class="dot tpoint"></span> Point on curve at parameter t</div>
+</div>
+
+<div class="hint">
+  Drag control points to modify the curve
+</div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
