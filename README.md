@@ -1,6 +1,8 @@
 # DegreeElevation
 Web-based interactive tool for visualizing Bézier curves, degree elevation, and the de Casteljau construction.
 
+👉 [Live Demo](https://ivantrandzhiev.github.io/DegreeElevation/)
+
 # Bézier Degree Elevation Visualizer
 
 <p align="center">
